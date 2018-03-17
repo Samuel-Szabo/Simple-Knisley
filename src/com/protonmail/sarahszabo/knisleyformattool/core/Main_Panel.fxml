@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+        <TextField fx:id="authorsTextField" layoutX="14.0" layoutY="69.0" prefHeight="25.0" prefWidth="411.0" promptText="Author0, Author1, Author2" />
+        <TextField fx:id="titleTextFeild" layoutX="14.0" layoutY="103.0" prefHeight="25.0" prefWidth="411.0" promptText="Article Title" />
+        <RadioButton fx:id="journalRadioButton" layoutX="627.0" layoutY="63.0" mnemonicParsing="false" selected="true" text="Journal">
+            <toggleGroup>
+                <ToggleGroup fx:id="OptionsGroup" />
+            </toggleGroup>
+        </RadioButton>
+        <Label layoutX="14.0" layoutY="36.0" prefHeight="25.0" prefWidth="53.0" text="Fields:" />
+        <Label layoutX="587.0" layoutY="41.0" prefHeight="15.0" prefWidth="90.0" text="Options:" />
+        <RadioButton fx:id="bookRadioButton" layoutX="627.0" layoutY="94.0" mnemonicParsing="false" text="Article In Book" toggleGroup="$OptionsGroup" />
+        <TextArea fx:id="citationTextArea" editable="false" layoutX="14.0" layoutY="334.0" prefHeight="200.0" prefWidth="411.0" promptText="Citation" wrapText="true" />
+        <TextField fx:id="dateTextField" layoutX="14.0" layoutY="136.0" prefHeight="25.0" prefWidth="411.0" promptText="Date" />
+        <TextField fx:id="urlTextField" layoutX="14.0" layoutY="170.0" prefHeight="25.0" prefWidth="411.0" promptText="URL" />
+        <Button fx:id="generateCitationButton" layoutX="585.0" layoutY="326.0" mnemonicParsing="false" onAction="#generateCitation" prefHeight="51.0" prefWidth="183.0" text="Generate Citation" />
+        <TextField fx:id="publisherTextField" layoutX="14.0" layoutY="205.0" prefHeight="25.0" prefWidth="411.0" promptText="Publisher" />
+        <TextField fx:id="telephoneNumberTextField" layoutX="14.0" layoutY="238.0" prefHeight="25.0" prefWidth="411.0" promptText="Telephone Number" />
+        <Separator layoutX="438.0" layoutY="60.0" orientation="VERTICAL" prefHeight="136.0" prefWidth="10.0" />
+        <Label layoutX="457.0" layoutY="121.0" text="Manditory Data" />
+        <Separator layoutX="433.0" layoutY="203.0" orientation="VERTICAL" prefHeight="92.0" prefWidth="10.0" />
+        <Label layoutX="457.0" layoutY="231.0" text="Optional Data" />
+        <Separator prefWidth="200.0" />
+        <Separator layoutX="422.0" layoutY="62.0" prefHeight="3.0" prefWidth="22.0" />
+        <Separator layoutX="422.0" layoutY="194.0" prefHeight="3.0" prefWidth="22.0" />
+        <Separator layoutX="422.0" layoutY="204.0" prefHeight="3.0" prefWidth="22.0" />
+        <Separator layoutX="427.0" layoutY="299.0" prefHeight="3.0" prefWidth="22.0" />
+        <TextField fx:id="pageNumberTextField" layoutX="14.0" layoutY="275.0" prefHeight="25.0" prefWidth="411.0" promptText="Page Number" />
+        <Button layoutX="585.0" layoutY="383.0" mnemonicParsing="false" onAction="#clearTextBox" prefHeight="51.0" prefWidth="183.0" text="Clear Citations" />
+        <Button fx:id="clearFields" layoutX="585.0" layoutY="444.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="51.0" prefWidth="183.0" text="Clear Fields" />
+        <MenuBar prefHeight="29.0" prefWidth="782.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Clipboard">
+                    <items>
+                        <Menu fx:id="historyMenuItem" mnemonicParsing="false" text="History" />
+                        <Menu mnemonicParsing="false" text="BIO 205">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#copyBIO205Citation" text="BIO 205 Lab Manual Citation" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Misc">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#displayTips" text="Tips &amp; Tricks" />
+                        <MenuItem mnemonicParsing="false" onAction="#displayAboutPage" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</AnchorPane>
